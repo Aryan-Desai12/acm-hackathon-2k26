@@ -1,0 +1,11 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+python-engine/venv/
+python-engine/.dvs/
+python-engine/__pycache__/
+python-engine/public_dataset.csv
+.dvs/
+public_dataset.csv
