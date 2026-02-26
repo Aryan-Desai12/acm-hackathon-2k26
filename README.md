@@ -4,15 +4,6 @@ DVS is a powerful VS Code extension designed to bring structured version control
 
 ---
 
-## 🚀 Key Features
-
-- **Intuitive Dataset History:** Access an integrated timeline of immutable versions with unique hash tracking.
-- **Dynamic Visual Dashboard:** Explore dataset evolution through interactive branching graphs and trend analysis (Row Count, Vocab Size, etc.).
-- **High-Performance Python Engine:** Leverages SHA-256 deterministic hashing for guaranteed reproducibility and automated metric extraction.
-- **Deep Version Comparison:** Perform side-by-side analysis of dataset shifts and preprocessing configurations to ensure data quality.
-
----
-
 ## 🛠️ Step-by-Step Local Setup
 
 Follow these instructions to get DVS running on your machine.
