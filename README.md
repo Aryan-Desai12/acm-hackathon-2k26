@@ -1,25 +1,6 @@
-# DVS: Dataset Versioning System (GitLens-style)
+# DVS: Dataset Versioning System
 
 DVS is a VS Code extension designed to bring familiar Git-like version control to text datasets. It allows data scientists to track preprocessing experiments, visualize dataset evolution, and monitor metric trends directly within their IDE.
-
-## 🚀 Features
-
-### 1. Dataset History Sidebar
-Navigate your project's data evolution with a dedicated history view:
-- **Immutable Commits:** Every dataset version is uniquely hashed based on raw data and configuration.
-- **Timeline Browsing:** See a list of all versions with exact timestamps.
-- **Context Actions:** Refresh history or inspect any version with a single click.
-
-### 2. Interactive Dashboard
-Visualize your data lineage and quality:
-- **Version Timeline (Graph):** A visual branching graph showing how versions connect.
-- **Metric Trend Charts:** Real-time visualization of `Row Count`, `Vocab Size`, and `Average Doc Length` over time.
-- **Deep Comparison:** Side-by-side analysis of preprocessing configs and metric shifts.
-
-### 3. Python-Powered Engine
-- **Deterministic Hashing:** SHA-256 guarantees reproducibility.
-- **Automated Metrics:** Out-of-the-box tracking of vocabulary and document statistics.
-- **Configurable Preprocessing:** Support for lowercasing, deduplication, length filtering, and tokenization.
 
 ## 🛠️ Getting Started
 
