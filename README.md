@@ -1,31 +1,88 @@
 # DVS: Dataset Versioning System
 
-DVS is a VS Code extension designed to bring familiar Git-like version control to text datasets. It allows data scientists to track preprocessing experiments, visualize dataset evolution, and monitor metric trends directly within their IDE.
+DVS is a powerful VS Code extension designed to bring structured version control to text datasets. It empowers data scientists to seamlessly track preprocessing experiments, visualize dataset lineage, and monitor key metric trends—all within a unified, interactive workspace.
 
-## 🛠️ Getting Started
+---
 
-### Prerequisites
-- Python 3.8+
-- Pandas
+## 🚀 Key Features
 
-### Installation
-1. Open the project in VS Code.
-2. Build the extension: `npm install && npm run compile`.
-3. Press `F5` to open the Extension Development Host.
+- **Intuitive Dataset History:** Access an integrated timeline of immutable versions with unique hash tracking.
+- **Dynamic Visual Dashboard:** Explore dataset evolution through interactive branching graphs and trend analysis (Row Count, Vocab Size, etc.).
+- **High-Performance Python Engine:** Leverages SHA-256 deterministic hashing for guaranteed reproducibility and automated metric extraction.
+- **Deep Version Comparison:** Perform side-by-side analysis of dataset shifts and preprocessing configurations to ensure data quality.
 
-### Verification (Public Dataset)
-Run the built-in test suite to see DVS in action with the **SMS Spam Collection** corpus:
+---
+
+## 🛠️ Step-by-Step Local Setup
+
+Follow these instructions to get DVS running on your machine.
+
+### 1. Prerequisites
+- **Python 3.8+**
+- **Node.js 18+** & **npm**
+- **VS Code**
+
+### 2. Python Engine Setup
+The engine handles the core versioning logic for your data.
 ```bash
+# Navigate to the engine directory
 cd python-engine
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install dependencies
+pip install pandas
+```
+
+### 3. Run Sample Data Test
+Verify the system by processing a sample dataset (SMS Spam Collection).
+```bash
+# Still inside python-engine
 python3 run_public_test.py
 ```
-This will generate two versions:
-1. **Raw:** The original dataset.
-2. **Cleaned:** Lowercased and deduplicated.
+*This script automatically downloads the dataset and generates two distinct versions: **Raw** and **Cleaned**.*
 
-Open the **DVS Sidebar** in VS Code to see these versions appear instantly!
+### 4. VS Code UI Setup
+```bash
+# Navigate back to the root directory
+cd ..
+
+# Install dependencies
+npm install
+
+# Compile the extension
+npm run compile
+```
+
+---
+
+## 🖥️ Launching the Interactive Workspace
+
+To experience the unique DVS interface:
+
+1.  Open the project folder in **VS Code**.
+2.  Press **`F5`** (or go to `Run and Debug` → `Run Extension`).
+3.  A new **[Extension Development Host]** window will appear.
+4.  In the activity bar of the new window, click the **DVS icon** (History icon).
+5.  Explore the **Dataset History** populated with the versions managed in Step 3.
+6.  Click on any version hash to launch the **Interactive Dashboard**.
+
+---
 
 ## 📦 Project Structure
+
 - `src/`: VS Code extension source code (TypeScript).
-- `python-engine/`: Core versioning and diffing logic.
-- `.dvs/`: Local database for commits and objects (ignored by git).
+- `python-engine/`: Core versioning, hashing, and diffing logic.
+- `.dvs/`: Local database for commits and objects (automatically generated).
+- `dist/`: Compiled extension code.
+
+---
+
+## 🧪 Verification
+You can check the tracked history via CLI anytime:
+```bash
+cd python-engine
+python3 core.py --history
+```
